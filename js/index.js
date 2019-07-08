@@ -100,4 +100,18 @@ low1[2].textContent = siteContent ["contact"]["email"];
 const foot = document.querySelector("footer p");
 foot.textContent = siteContent["footer"]["copyright"];
 
+
 // Task 3:
+navItems.forEach(item => item.style.color = "green");
+const navbar = document.querySelector('nav');
+const link_1 = document.createElement("a");
+link_1.textContent = "Home";
+link_1.style.color = "purple";
+link_1.style.textDecoration = "underline";
+navbar.prepend(link_1);
+
+const link_2 = document.createElement("a")
+link_2.textContent = "Menu";
+link_2.style.color = "red";
+link_2.style.fontStyle = "bold";
+navbar.appendChild(link_2);
