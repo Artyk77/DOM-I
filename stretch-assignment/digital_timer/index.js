@@ -4,15 +4,12 @@ const msHundreds = document.querySelector("#msHundreds");
 const msTens = document.querySelector("#msTens");
 
 
-let ms1 = 0;
+
 let ms10 = 0;
+let ms100 = 0;
 let sec1 = 0;
 let sec10 = 0;
 
-secondTens.textContent = sec10;
-secondOnes.textContent = sec1;
-msHundreds.textContent = ms10;
-msTens.textContent= ms1;
 
 
 // Creating button tag and adding it to body
@@ -28,7 +25,6 @@ body.appendChild(button);
 
 body.style.display = "flex";
 body.style.flexDirection = "column";
-
 
 // Adding close button
 
@@ -57,39 +53,54 @@ buttons.forEach(item => {
 
 button.addEventListener("click", item => {
     console.log("Hello");
-    ms10+=1;
-    setTimeout(function (){
+ 
+    setInterval(function (){
+        ms10+=1;
         MilliSecond();
         firstSecond();
         tenSecond();
-
+        stopper();
     },1000);
-
-
-
-});
+},true);
 
 function MilliSecond(){
-    if(ms10 === 9){
+    if(ms10 === 6){
        ms10 = 0;
-    }else{
-        ms1 +=1 ;
-    }
+       ms100 +=1;
+    
 }
-
+console.log(ms10);
+msTens.textContent= ms10;
+}
 function firstSecond(){
-    if(ms1 === 9){
-        ms1 = 0;
-    }else{
-        sec10 +=1;
-    }
-}
-
-function tenSecond(){
-    if(sec10 === 9){
-        sec10 = 0;
-    }else{
+    if(ms100 === 6){
+        ms100 = 0;
         sec1 +=1;
     }
-}
 
+    console.log(ms100);
+    msHundreds.textContent= ms100;
+}
+   
+
+function tenSecond(){
+   
+        if(sec1 === 6){
+        sec1 = 0;
+        sec10 +=1;
+    }
+    console.log(sec1);
+    secondOnes.textContent = sec1;
+    }
+
+    function stopper () {
+        if(sec10 === 6){
+        sec10 = 0;
+        clearTimeout ();
+    }
+console.log(sec10);
+secondTens.textContent= sec10;
+    }
+    closeButton.addEventListener ("click", ev => {
+
+    });
