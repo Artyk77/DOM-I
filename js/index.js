@@ -40,9 +40,7 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
-
-
-// Task 1:
+// Task 1 and Task 2:
 
 // Nav items
 const navItems = document.querySelectorAll("header nav a")
@@ -92,15 +90,14 @@ bottom1[1].children[1].textContent = siteContent["main-content"]["product-conten
 bottom1[2].children[0].textContent = siteContent["main-content"]["vision-h4"]
 bottom1[2].children[1].textContent = siteContent["main-content"]["vision-content"]
 
-
 const low = document.querySelectorAll(".contact h4");
-low[0].textContent = siteContent["contact"]["contact-h4"];
+low[0].textContent = siteContent ["contact"]["contact-h4"];
 const low1 = document.querySelectorAll(".contact p");
-low1[0].textContent = siteContent["contact"]["address"];
-low1[1].textContent = siteContent["contact"]["phone"];
-low1[2].textContent = siteContent["contact"]["email"];
+low1[0].textContent = siteContent ["contact"]["address"];
+low1[1].textContent = siteContent ["contact"]["phone"];
+low1[2].textContent = siteContent ["contact"]["email"];
 
 const foot = document.querySelector("footer p");
 foot.textContent = siteContent["footer"]["copyright"];
 
-// Task 2:
+// Task 3:
